@@ -1,0 +1,12 @@
+--- /opt/vyatta/sbin/vyatta-interfaces.pl
++++ /opt/vyatta/sbin/vyatta-interfaces.pl
+@@ -192,6 +192,8 @@
+     my $hostname = get_hostname();
+
+     $output .= "option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n";
++    $output .= "option rfc3118-authentication code 90 = string;\n\n";
++
+
+     $output .= "interface \"$intf\" {\n";
+     if (defined($hostname)) {
+
