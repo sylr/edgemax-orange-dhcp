@@ -14,7 +14,7 @@ INT_SUFFIX="eth0#40::1/64"
 INT_SUFFIX="$INT_SUFFIX switch0.198#98::1/64"
 INT_SUFFIX="$INT_SUFFIX switch0.199#99::1/64"
 
-STATUS_FILE=/var/run/dibbler.lease
+STATUS_FILE=/run/dibbler.lease
 #STATUS_FILE=/tmp/dibbler.lease
 
 if [ -f "$STATUS_FILE" ]; then
