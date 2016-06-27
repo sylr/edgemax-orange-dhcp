@@ -22,7 +22,7 @@ if [ -f "$STATUS_FILE" ]; then
 fi
 
 TRIM_SIZE=$(perl -e '$bin=sprintf("%-128s", "1" x '${PREFIX1LEN}'); $bin =~ s/ /0/g; $bin =~ s/([0-1]{1,16})/sprintf("%0x", oct("0b$1"))/eg; print $bin' | sed -e 's/0//g' | wc -c)
-PREFIX1=$(echo $PREFIX1 | perl -pe 's/([0-9a-c]+)/sprintf("%04s",$1)/ge,s/://g')
+PREFIX1=$(echo $PREFIX1 | perl -pe 's/([0-9a-f]+)/sprintf("%04s",$1)/ge,s/://g')
 PREFIX1=${PREFIX1:0:$TRIM_SIZE}
 PREFIX1=$(echo $PREFIX1 | perl -p -e 's/([0-9a-f]{4})/$1:/g')
 
